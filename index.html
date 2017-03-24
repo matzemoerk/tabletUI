@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="fhemweb_url" content="http://192.168.0.10:8083/fhem">
+    <meta name="gridster_cols" content="10">
+    <meta name="gridster_rows" content="5">
+    <meta name="widget_margin" content="4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name='toast' content='0'>
+<meta name="longpoll_type" content="websocket">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- define your personal style here, it wont be overwritten  -->
+        <link rel="stylesheet" href="css/fhem-darkblue-ui.css" />
+    <link rel="stylesheet" href="css/fhem-tablet-ui-user.css" />
+    <script src="js/fhem-tablet-ui.js" defer></script>
+    
+    <title>FHEM-Tablet-UI</title>
+</head>
+
+<body>
+    <div class="gridster">
+        <ul>
+            <!-- Uhr ============================================================================ -->
+            <li data-row="1" data-col="1" data-sizey="1" data-sizex="1">
+                <header>Uhr</header>
+                <div class="vbox">
+                        <div data-type="clock" data-format="H:i" class="bigger blue"></div>
+
+                        <div data-type="clock" data-format="d.m.Y" class="darker"></div>
+                    </div>
+            </li>
+            <!-- Menü =========================================================================== -->
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="4">
+                <header>Menü</header>
+                <div class="vbox large items-top">
+                    <div data-type="pagebutton" data-url="#page_main.html" data-load="#main" data-active-pattern=".*#page_main.html" data-icon="fa-home" class="default top-space"></div>
+                    <div data-type="pagebutton" data-url="#page_wecker.html" data-load="#wecker"  data-active-pattern=".*#page_wecker.html" data-icon="fa-bell" class="top-space"></div>
+                    <div data-type="pagebutton" data-url="#page_sonos.html" data-load="#sonos"  data-active-pattern=".*#page_sonos.html" data-icon="fa-music" class="prefetch top-space"></div>
+                    <div data-type="pagebutton" data-url="#page_wetter.html" data-load="#wetter"  data-active-pattern=".*#page_wetter.html" data-icon="fa-cloud" class="top-space"></div>
+                    <div data-type="pagebutton" data-url="#page_fritzbox.html" data-load="#fritzbox"  data-active-pattern=".*#page_fritzbox.html" data-icon="fa-phone" class="top-space"></div>
+                    <div data-type="pagebutton" data-url="#page_system.html" data-load="#system" data-active-pattern=".*#page_system.html" data-icon="fa-gears" class="top-space"></div>
+                    
+                </div>
+            </li>
+           
+            <!-- Seiten ========================================================================= -->
+            <li data-row="2" data-col="2" data-sizex="9" data-sizey="4" style="background:none;">
+                <div class="page" id="main"></div>
+                <div class="page" id="wecker"></div>
+                <div class="page" id="sonos"></div>
+                <div class="page" id="tv"></div>
+                <div class="page" id="wetter"></div>
+                <div class="page" id="fritzbox"></div>
+                <div class="page" id="system"></div>
+
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

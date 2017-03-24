@@ -1,0 +1,70 @@
+<html>
+<title>FHEM</title>
+
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * first page
+     * -->
+</head>
+
+<body>
+    <div class="page" id="system">
+        <div class="gridster">
+            <ul>
+                <li data-row="1" class="transparent50" data-col="1" data-sizex="2" data-sizey="2">
+                    <HEADER>Rolladen</HEADER>
+                    <div class="vbox">
+                   	<div class="container">
+                    <div data-type="checkbox" data-device="dummy_Rolladenautomatik" data-get-on="on" data-get-off="off" data-icon="fa-cogs" class="blue cell"></div>
+                    <div data-type="label" class="narrow">Rolladenautomatik</div>
+                    </div>
+                    <div class="container top-space-2x">
+
+                    <div data-type="checkbox" data-device="dummy_RolladenOeffner" data-get-on="on" data-get-off="off" data-icon="fa-cogs" class="cell blue"></div>
+                    <div data-type="label" class="narrow">aut. Öffnung</div>
+                                        </div>
+                    
+
+              </div>
+                </li>
+                <li data-row="1" data-col="2" data-sizex="2" data-sizey="2">
+                    <HEADER>Licht</HEADER>
+                                        <div class="vbox">
+
+                                        <div class="container">
+
+                    <div data-type="checkbox" data-device="dummy_Lichtautomatik" data-get-on="on" data-get-off="off" data-icon="fa-cogs" class="blue cell"></div>
+                    <div data-type="label" class="narrow">Leuchtenautomatik</div>
+                    </div>
+                                                            <div class="container top-space-2x">
+
+                    <div data-type="label" data-part="2" data-device="DOIF_Lichtautomatik" data-get="timer_1_c1" class="cell top-space-2x"></div>
+                    </div>
+                                        </div>
+
+                </li>
+                <li data-row="1" class="transparent50" data-col="3" data-sizex="2" data-sizey="2">
+                    <HEADER>Bett</HEADER>
+                                        <div class="vbox">
+
+                                                            <div class="container">
+
+                    <div data-type="checkbox" data-device="dummy_Nachtschaltung_Wasserbett" data-get-on="on" data-get-off="off" data-icon="fa-cogs" class="blue cell"></div>
+                    <div data-type="label" class="narrow">Nachtschaltung</div>
+                    </div>
+                                                            <div class="container top-space-2x">
+
+                    <div data-type="switch" class="cell tiny readonly top-space-3x" data-device="DG_Schlafzimmer_Strom_Wasserbett" data-get-on="on" data-get-off="off" data-icon="fa-plug"></div>
+                    <div data-type="label" class="narrow">Heizungszustand</div>
+                    </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

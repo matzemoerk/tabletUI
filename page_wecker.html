@@ -1,0 +1,84 @@
+<html>
+<title>FHEM</title>
+
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * first page
+     * -->
+</head>
+
+<body>
+    <div class="page" id="wecker">
+        <div class="gridster">
+            <ul>
+                <li data-row="1" data-col="1" data-sizex="2" data-sizey="3">
+                    <HEADER>Wecker Hanna</HEADER>
+                    <div class="vbox">
+                        <div class="cell top-space-3x">
+                            <div data-type="datetimepicker" data-device="dummy_WeckzeitHanna" data-datepicker="false" data-step="15" data-format="H:i:s" class="big top-space"></div>
+                            <div class="left left-space top-space-3x">
+                                <div data-type="switch" data-device="dummy_WeckerHanna" data-get-on="on" data-get-off="off" data-icon="fa-bell" class="cell top-space"></div>
+                                <div data-type="label" class="narrow darker">Wecker aktiv</div>
+                            </div>
+                        </div>
+                        <div class="hbox">
+                            <div class="container">
+                                <div data-type="switch" class="cell small" data-device="dummy_WeckerHannaEspresso" data-get-on="on" data-get-off="off" data-icon="fa-power-off"></div>
+                                <div data-type="label" class="narrow darker">Espresso</div>
+                            </div>
+                            <div class="container">
+                                <div data-type="switch" class="cell small" data-device="dummy_WeckerHannaLicht" data-get-on="on" data-get-off="off" data-icon="fa-power-off"></div>
+                                <div data-type="label" class="narrow darker">Licht</div>
+                            </div>
+                            <div class="container">
+                                <div data-type="switch" class="cell small" data-device="dummy_WeckerHannaRadio" data-get-on="on" data-get-off="off" data-icon="fa-power-off"></div>
+                                <div data-type="label" class="narrow darker">Radio</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
+                    <div class="hbox">
+                        <div class="container">
+                            <div data-type="push" data-icon="fa-bell" data-fhem-cmd="set dummy_WeckzeitHanna 05:15:00; set dummy_WeckerHannaLicht on; set dummy_WeckerHanna on"> </div>
+                            <div data-type="label" class="narrow darker top-space">Frühschicht</div>
+                        </div>
+                        <div class="container">
+                            <div data-type="push" data-icon="fa-bell" data-fhem-cmd="set dummy_WeckzeitHanna 10:00:00; set dummy_WeckerHannaLicht on; set dummy_WeckerHanna on"> </div>
+                            <div data-type="label" class="narrow darker top-space">Spätschicht</div>
+                        </div>
+                </li>
+                <li data-row="1" data-col="3" data-sizex="2" data-sizey="3">
+                    <HEADER>Wecker Matthias</HEADER>
+                    <div class="vbox">
+                        <div class="cell top-space-3x">
+                            <div data-type="datetimepicker" data-device="dummy_WeckzeitMatthias" data-datepicker="false" data-step="15" data-format="H:i:s" class="big top-space"></div>
+                            <div class="left left-space top-space-3x">
+                                <div data-type="switch" data-device="dummy_WeckerMatthias" data-get-on="on" data-get-off="off" data-icon="fa-bell" class="cell top-space"></div>
+                                <div data-type="label" class="narrow darker">Wecker aktiv</div>
+                            </div>
+                        </div>
+                        <div class="hbox">
+                            <div class="container">
+                                <div data-type="switch" class="cell small" data-device="dummy_WeckerMatthiasEspresso" data-get-on="on" data-get-off="off" data-icon="fa-power-off"></div>
+                                <div data-type="label" class="narrow darker">Espresso</div>
+                            </div>
+                            <div class="container">
+                                <div data-type="switch" class="cell small" data-device="dummy_WeckerMatthiasLicht" data-get-on="on" data-get-off="off" data-icon="fa-power-off"></div>
+                                <div data-type="label" class="narrow darker">Licht</div>
+                            </div>
+                            <div class="container">
+                                <div data-type="switch" class="cell small" data-device="dummy_WeckerMatthiasRadio" data-get-on="on" data-get-off="off" data-icon="fa-power-off"></div>
+                                <div data-type="label" class="narrow darker">Radio</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+</body>
+
+</html>

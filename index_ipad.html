@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * UI builder framework for FHEM
+     *
+     * Version: 2.2.0
+     * URL: https://github.com/knowthelist/fhem-tablet-ui
+     *
+     * Copyright (c) 2015-2016 Mario Stephan <mstephan@shared-files.de>
+     * Under MIT License (http://www.opensource.org/licenses/mit-license.php)
+     *
+     * !!!! Evaluation version - run only in a staging enviroment !!!!
+     *
+     * - create a new folder named 'tablet_eval' in /<fhem-path>/www
+     * - copy all files incl. sub folders into /<fhem-path>/www/tablet_eval
+     * - add 'define TABLETUIEVAL HTTPSRV ftui_eval ./www/tablet_eval Tablet-EVAL' in fhem.cfg
+     * - Tadaaa! A new fhem ui in http://<fhem-url>:8083/fhem/tablet_eval/
+     */
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="widget_base_width" content="116">
+    <meta name="widget_base_height" content="145">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="gridster_disable" content="1">
+    <meta name="longpoll" content="1"> <!-- 1=longpoll;0=shortpoll every 30sec -->
+    <meta name="debug" content="0"> <!-- verbose level 1-6 = output to console;0 = not output -->
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta name="fhemweb_url" content="http://192.168.0.10:8083/fhem"> 
+
+
+    <link rel="stylesheet" href="lib/jquery.gridster.min.css" />
+    <link rel="stylesheet" href="css/fhem-tablet-ui.css" />
+    <link rel="stylesheet" href="lib/font-awesome.min.css" />
+    <link rel="stylesheet" href="lib/jquery.toast.min.css" />
+    <link rel="stylesheet" href="lib/openautomation.css" />
+        <link rel="stylesheet" href="lib/fhemSVG.css" />
+
+
+
+    <!-- define your personal style here, it wont be overwritten  -->
+    <link rel="stylesheet" href="css/fhem-blue-ui.css" />
+    <!-- link rel="stylesheet" href="css/fhem-tablet-ui-user.css" / -->
+
+    <script src="../pgm2/jquery.min.js"></script>
+    <script src="lib/jquery.toast.min.js"></script>
+    <script src="lib/jquery.gridster.min.js"></script>
+    <script src="js/fhem-tablet-ui.js" defer></script>
+
+    <title>FHEM-Tablet-UI</title>
+</head>
+<body>
+    <div class="gridster">
+        <ul>
+        
+        
+                    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+						<div data-type="clock" data-format="H:i" class="bigger blue top-space-3x"></div>
+                    </li>
+
+        
+        
+
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="4" class="large">
+                <div data-type="pagebutton" data-url="#page_main.html" data-load="#main" data-off-background-color="transparent" data-off-color="#606060" data-on-background-color="#606060" data-on-color="#222222" data-active-pattern=".*#page_main.html" data-icon="fa-home" class="default top-space"></div>
+                
+            <div data-type="pagebutton" data-url="#page_wecker.html" data-load="#wecker" data-off-background-color="transparent" data-off-color="#606060" data-on-background-color="#606060" data-on-color="#222222" data-active-pattern=".*#page_wecker.html" data-icon="fa-bell" class="prefetch top-space"></div>     
+        
+                <div data-type="pagebutton" data-url="#page_sonos.html" data-load="#sonos" data-off-background-color="transparent" data-off-color="#606060" data-on-background-color="#606060" data-on-color="#222222" data-active-pattern=".*#page_sonos.html" data-icon="fa-music" class="prefetch top-space"></div>
+                
+                <div data-type="pagebutton" data-url="#page_wetter.html" data-load="#wetter" data-off-background-color="transparent" data-off-color="#606060" data-on-background-color="#606060" data-on-color="#222222" data-active-pattern=".*#page_wetter.html" data-icon="fa-cloud" class="prefetch top-space"></div>
+                
+                    <div data-type="pagebutton" data-url="#page_system.html" data-load="#system" data-off-background-color="transparent" data-off-color="#606060" data-on-background-color="#606060" data-on-color="#222222" data-active-pattern=".*#page_system.html" data-icon="fa-gears" class="prefetch top-space"></div>
+      
+                
+            </li>
+            
+
+
+            <li data-row="1" data-col="2" data-sizex="5" data-sizey="1">
+            
+ <div class="cell left left-space-2x">           
+ <div data-type="label" class="bold darker">Wohnzimmer</div>
+ <div data-type="klimatrend"
+    data-device="OG_Wohnen_Klima"
+    data-get="statTemperatureTendency"
+    data-refperiod="1"
+    data-stagnating-color="rgb(120,120,120)"
+    data-icon="fa-angle"
+    data-rising-color="rgb(180,80,80)"
+    data-falling-color="rgb(51,122,183)"
+    data-highmark="1"
+    data-highmark-icon="fa-angle-double"
+    data-highmark-rising-color="rgb(255,80,80)"
+    data-highmark-falling-color="rgb(80,80,255)"
+    class="inline big"
+    ></div>
+<div data-type="label" 
+     data-device="OG_Wohnen_Klima"
+	   data-get="temperature"   
+     data-limits='[-73,10,23]' 
+     data-colors='["#4169E1","#FFA500","#FF0000"]' 
+     data-unit="%B0C%0A" 
+     data-fix="1"
+     class="big top-space inline">
+</div>
+<div 
+		 style="color: #337ab7"	
+		 data-type="label" 
+     data-device="OG_Wohnen_Klima"
+	   data-get="humidity"    
+     data-unit="%" 
+     class="cell big top-space">
+</div>
+  </div>
+          
+  <div class="cell left left-space-3x">           
+ <div data-type="label" class="bold darker">Schlafzimmer</div>          
+         
+         <div data-type="klimatrend"
+    data-device="DG_Schlafzimmer_Klima"
+    data-get="statTemperatureTendency"
+    data-refperiod="1"
+    data-stagnating-color="rgb(120,120,120)"
+    data-icon="fa-angle"
+    data-rising-color="rgb(180,80,80)"
+    data-falling-color="rgb(51,122,183)"
+    data-highmark="1"
+    data-highmark-icon="fa-angle-double"
+    data-highmark-rising-color="rgb(255,80,80)"
+    data-highmark-falling-color="rgb(80,80,255)"
+    class="inline big"
+    ></div>
+<div data-type="label" 
+     data-device="DG_Schlafzimmer_Klima"
+	   data-get="temperature"   
+     data-limits='[-73,10,23]' 
+     data-colors='["#4169E1","#FFA500","#FF0000"]' 
+     data-unit="%B0C%0A" 
+     data-fix="1"
+     class="big top-space inline">
+</div>
+<div 
+		 style="color: #337ab7"	
+		 data-type="label" 
+     data-device="DG_Schlafzimmer_Klima"
+	   data-get="humidity"    
+     data-unit="%" 
+     class="cell big top-space">
+</div>   
+</div>        
+
+ <div class="cell left left-space-3x">           
+ <div data-type="label" class="bold darker">Büro</div>
+
+<div data-type="klimatrend"
+    data-device="DG_Buero_Klima"
+    data-get="statTemperatureTendency"
+    data-refperiod="1"
+    data-stagnating-color="rgb(120,120,120)"
+    data-icon="fa-angle"
+    data-rising-color="rgb(180,80,80)"
+    data-falling-color="rgb(51,122,183)"
+    data-highmark="1"
+    data-highmark-icon="fa-angle-double"
+    data-highmark-rising-color="rgb(255,80,80)"
+    data-highmark-falling-color="rgb(80,80,255)"
+    class="inline big"
+    ></div>
+<div data-type="label" 
+     data-device="DG_Buero_Klima"
+	   data-get="temperature"   
+     data-limits='[-73,10,23]' 
+     data-colors='["#4169E1","#FFA500","#FF0000"]' 
+     data-unit="%B0C%0A" 
+     data-fix="1"
+     class="big top-space inline">
+</div>
+<div 
+		 style="color: #337ab7"	
+		 data-type="label" 
+     data-device="DG_Buero_Klima"
+	   data-get="humidity"    
+     data-unit="%" 
+     class="cell big top-space">
+</div>     
+</div>        
+
+            
+<div class="cell left left-space-3x">           
+ <div data-type="label" class="bold darker">Bäder</div>
+            
+            
+            <div>
+ <div data-type="klimatrend"
+    data-device="DG_Bad_Klima"
+    data-get="statTemperatureTendency"
+    data-refperiod="1"
+    data-stagnating-color="rgb(120,120,120)"
+    data-icon="fa-angle"
+    data-rising-color="rgb(180,80,80)"
+    data-falling-color="rgb(51,122,183)"
+    data-highmark="1"
+    data-highmark-icon="fa-angle-double"
+    data-highmark-rising-color="rgb(255,80,80)"
+    data-highmark-falling-color="rgb(80,80,255)"
+    class="inline big"
+    ></div>
+<div data-type="label" 
+     data-device="DG_Bad_Klima"
+	   data-get="temperature"   
+     data-limits='[-73,10,23]' 
+     data-colors='["#4169E1","#FFA500","#FF0000"]' 
+     data-unit="%B0C%0A" 
+     data-fix="1"
+     class="big top-space inline">
+</div>
+</div>
+<div>
+ <div data-type="klimatrend"
+    data-device="OG_WC_Klima"
+    data-get="statTemperatureTendency"
+    data-refperiod="1"
+    data-stagnating-color="rgb(120,120,120)"
+    data-icon="fa-angle"
+    data-rising-color="rgb(180,80,80)"
+    data-falling-color="rgb(51,122,183)"
+    data-highmark="1"
+    data-highmark-icon="fa-angle-double"
+    data-highmark-rising-color="rgb(255,80,80)"
+    data-highmark-falling-color="rgb(80,80,255)"
+    class="inline big"
+    ></div>
+<div data-type="label" 
+     data-device="OG_WC_Klima"
+	   data-get="temperature"   
+     data-limits='[-73,10,23]' 
+     data-colors='["#4169E1","#FFA500","#FF0000"]' 
+     data-unit="%B0C%0A" 
+     data-fix="1"
+     class="inline top-space big">
+</div>
+</div>
+</div>
+ 
+ </li>       
+       
+        
+<li data-row="1" data-col="7" data-sizex="3" data-sizey="1">
+
+
+<div data-type="push" 
+     data-icon="fa-moon-o"
+     class="cell bigger top-space-2x"
+     onclick="setFhemStatus('set OG_Wohnen_Dimmer_Stehlampe 30 0 10; set HUEDevice1 hue 9000 : sat 175 : bri 130 10; set HUEDevice2 hue 9000 : sat 255 : bri 130 10; set OG_Kueche_Dimmer_Essen 0 0 10; set OG_Wohnen_Dimmer_Decke 0 0 10; set OG_Kueche_Licht_Decke off')"></div>
+
+<div data-type="push" 
+     data-icon="fa-film"
+     class="cell bigger top-space-2x"
+     onclick="setFhemStatus('set OG_Wohnen_Dimmer_Stehlampe 0 0 10; set HUEDevice1 hue : 45000 : sat 175 : bri 130 10; set HUEDevice2 hue : 45000 : sat 255: bri 130 10; set OG_Kueche_Dimmer_Essen 0 0 10; set OG_Wohnen_Dimmer_Decke 0 0 10; set OG_Kueche_Licht_Decke off')"></div>
+     
+     <div data-type="push" 
+     data-icon="fa-bed"
+     class="cell bigger top-space-2x"
+     onclick="setFhemStatus('set OG_Wohnen_Dimmer_Stehlampe 0 0 10; set HUEDevice1 off 10; set HUEDevice2 off 10; set OG_Kueche_Dimmer_Essen 0 0 10; set OG_Wohnen_Dimmer_Decke 0 0 10; set OG_Kueche_Licht_Decke off; set OG_Kueche_Strom_Espresso off; set TabletWandWohnzimmer screen off')"></div>
+     
+         
+     
+</li>   
+
+ 
+            
+ <li data-row="1" data-col="10" data-sizex="1" data-sizey="1">
+ <div data-type="switch"
+         data-device="dummy_Anwesenheit"
+         data-set-on="anwesend"
+         data-set-off="abwesend"
+         data-states='["anwesend","abwesend"]'
+         data-icons='["fa-home", "fa-car"]'
+         data-colors='["white", "white"]'
+         data-background-colors='["green", "red"]'
+         class="bigger top-space-2x"></div>
+</li>                   
+</li>
+
+
+            <li data-row="2" data-col="2" data-sizex="9" data-sizey="4" style="background:none;">
+                <div class="page" id="main"></div>
+                <div class="page" id="wecker"></div>
+                <div class="page" id="sonos"></div>
+                <div class="page" id="wetter"></div>
+                <div class="page" id="system"></div>
+                    
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

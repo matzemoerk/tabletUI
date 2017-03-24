@@ -1,0 +1,565 @@
+<html>
+<title>FHEM</title>
+
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * first page
+     * -->
+</head>
+
+<body>
+    <div class="page" id="wetter">
+        <div class="gridster">
+            <ul>
+            
+            
+            	<li data-row="1" data-col="1" data-sizex="3" data-sizey="4">
+		<header>
+			<div	data-type="label"
+					>Aktuell
+			</div>
+		</header>
+
+		<div class="row left-space right-space">
+			<div class="col-1-2">
+				<div	data-type="weather"
+						data-device="YahooWetter"
+						data-get="condition"
+						data-imageset="kleinklima"
+						class="top-space">
+				</div>
+				<div	data-type="label"
+						data-device="YahooWetter"
+						data-get="condition"
+						class="darker big">
+				</div>
+				<div	data-type="label"
+						data-device="AU_Balkon_Klima"
+						data-get="temperature"
+						data-unit="%B0C%0A"
+						data-limits="[-50,0,10,25,30,40]" 
+						data-colors='["#9999ff","#ffbdff","#aa6900","#ff6900","#ff3333","#ff0000"]' 
+						class="darker big">
+				</div>
+			</div>
+			<div class="col-1-2">
+				<div class="sheet">
+					<div class="row">
+						<div	class="cell"
+								data-type="symbol"
+								data-device="AgroWeather"
+								data-get="pressure"
+								data-unit="hPa"
+								data-icon="oa-weather_barometric_pressure"
+								data-off-color="gray">
+						</div>
+						<div	class="cell large darker"
+								data-type="label"
+								data-device="AgroWeather"
+								data-get="pressure">
+						</div>
+					</div>
+					<div class="row">
+						<div	class="cell darker small"
+								data-type="label"
+								data-device="AgroWeather"
+								data-get="pressure_trend_txt">
+						</div>
+					</div>
+					<div class="row">
+						<div	class="cell darker"
+								data-type="symbol"
+								data-icon="oa-weather_wind_speed"
+								data-off-color="gray">
+						</div>
+						<div	class="cell large darker"
+								data-type="label"
+								data-device="AgroWeather"
+								data-get="wind"
+								data-unit="km/h">
+						</div>
+					</div>
+					<div class="row">
+						<div	class="cell"
+								data-type="symbol"
+								data-icon="oa-weather_humidity"
+								data-off-color="gray">
+						</div>
+						<div	class="cell large darker"
+								data-type="label"
+								data-device="AU_Balkon_Klima"
+								data-get="humidity"
+								data-unit="%">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sheet">
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_sunrise"
+							data-off-color="gray">
+					</div>
+					<div	class="cell large darker"
+							data-type="label"
+							data-device="Twilight"
+							data-get="sr_civil"
+							data-part="([0-2][0-9]:[0-6][0-9]).*">
+					</div>
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_sunset"
+							data-off-color="gray">
+					</div>
+					<div	class="cell large darker"
+							data-type="label"
+							data-device="Twilight"
+							data-get="ss_civil"
+							data-part="([0-2][0-9]:[0-6][0-9]).*">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div	data-type="wind_direction" 
+				data-device="AgroWeather"
+				data-direction="windDir"
+				data-speed="wind"
+				data-size="100"
+				class="top-space">
+		</div>
+	</li>
+            
+            
+		<li data-row="1" data-col="3" data-sizex="3" data-sizey="4">
+		<header>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc1_day_of_week">
+			</div>
+		</header>
+		<div class="row top-space">
+			<div class="col-1-2">
+				<div	data-type="weather"
+						data-device="AgroWeather"
+						data-get="fc1_weatherDay"
+						data-imageset="kleinklima"
+						class="left-space right-space">
+				</div>
+				<div	data-type="label"
+						data-device="AgroWeather"
+						data-get="fc1_condition"
+						data-imageset="kleinklima"
+						class="left-space right-space">
+				</div>
+			
+				<div class="container">
+					<div	data-type="symbol"
+							data-off-color="gray"
+							data-icon="oa-weather_sun"
+							class="inline">
+					</div>
+					<div	data-type="label"
+							data-device="AgroWeather"
+							data-get="fc1_sun"
+							data-unit="%"
+							class="inline darker large">
+					</div>
+				</div>
+			
+				<div class="container">
+					<div	data-type="label"
+							class="inline darker large">UV
+					</div>
+					<div	data-type="label"
+							data-device="AgroWeather"
+							data-get="fc1_uv"
+							data-limits="[0,5,7,10,100]" 
+							data-colors='["#c0ffa0","#f8f040","#f87820","#d80020","#a80080"]' 
+							class="darker inline large">
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-1-2">
+				<div class="sheet">
+					<div class="row">
+						<div	class="cell"
+								data-type="symbol"
+								data-icon="oa-temp_temperature_min"
+								data-off-color="gray">
+						</div>
+						<div	class="cell big darker"
+								data-type="label"
+								data-device="AgroWeather"
+								data-get="fc1_tempMin"
+								data-unit="%B0C%0A">
+						</div>
+					</div>
+					<div class="row">
+						<div	class="cell"
+								data-type="symbol"
+								data-icon="oa-temp_temperature_max"
+								data-off-color="gray">
+						</div>
+						<div	class="cell big darker"
+								data-type="label"
+								data-device="AgroWeather"
+								data-get="fc1_tempMax"
+								data-unit="%B0C%0A">
+						</div>
+						</div>
+						<div class="row">
+							<div	class="cell"
+									data-type="symbol"
+									data-icon="oa-weather_rain_meter"
+									data-off-color="gray">
+							</div>
+							<div	class="cell big darker"
+									data-type="label"
+									data-device="AgroWeather"
+									data-get="fc1_chOfRainDay"
+									data-unit="%">
+							</div>
+						</div>
+				</div>
+        </div>
+		</div>
+		<div class="container darker">
+			<div class="sheet" id="wetterDetail">
+				<div class="row">
+					<div class="cell big fa fa-clock-o fa-2x"></div>
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-temp_temperature">
+					</div>
+					<div	class="cell"
+							data-type="weather"
+							data-icon="R"
+							data-imageset="meteocons">
+					</div>
+					<div class="cell big fa fa-line-chart"></div>
+				</div>
+				
+				<div class="row big">
+					<div class="cell" data-type="label">09:00</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_temp09" data-unit="%B0C%0A" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_rain09" data-unit="mm" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_chOfRain09" data-unit="%" class="right">
+					</div>
+				</div>
+				<div class="row big">
+					<div class="cell" data-type="label">12:00</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_temp12" data-unit="%B0C%0A" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_rain12" data-unit="mm" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_chOfRain12" data-unit="%" class="right">
+					</div>
+				</div>
+				<div class="row big">
+					<div class="cell" data-type="label">15:00</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_temp15" data-unit="%B0C%0A" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_rain15" data-unit="mm" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_chOfRain15" data-unit="%" class="right">
+					</div>
+				</div>
+				<div class="row big">
+					<div class="cell" data-type="label">18:00</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_temp18" data-unit="%B0C%0A" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_rain18" data-unit="mm" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_chOfRain18" data-unit="%" class="right">
+					</div>
+				</div>
+				<div class="row big">
+					<div class="cell" data-type="label">21:00</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_temp21" data-unit="%B0C%0A" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_rain21" data-unit="mm" class="right">
+					</div>
+					<div class="cell" data-type="label" data-device="AgroWeather" data-get="fc1_chOfRain21" data-unit="%" class="right">
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+		
+		
+		<li data-row="1" data-col="6" data-sizex="1" data-sizey="4">
+		<header>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc2_day_of_week">
+			</div>
+		</header>
+		<div class="container top-space">
+			<div	data-type="weather"
+					data-device="YahooWetter" 
+					data-get="fc2_condition"
+					data-imageset="kleinklima">
+			</div>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc2_condition"
+					data-imageset="kleinklima">
+			</div>
+		</div>
+ 		<div class="container top-space">
+			<div class="sheet darker">
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol" 
+							data-icon="oa-temp_temperature_min"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="YahooWetter"
+							data-get="fc2_low_c"
+							data-unit="%B0C%0A"></div>
+					</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-temp_temperature_max"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="YahooWetter"
+							data-get="fc2_high_c"
+							data-unit="%B0C%0A">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_rain_meter"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc2_chOfRainDay"
+							data-unit="%">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_sun"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc2_sun"
+							data-unit="%">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell icon"
+							data-type="label">UV
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc2_uv"
+							data-limits="[0,5,7,10,100]" 
+							data-colors='["#c0ffa0","#f8f040","#f87820","#d80020","#a80080"]'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+		<li data-row="1" data-col="7" data-sizex="1" data-sizey="4">
+		<header>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc3_day_of_week">
+			</div>
+		</header>
+		<div class="container top-space">
+			<div	data-type="weather"
+					data-device="YahooWetter" 
+					data-get="fc3_condition"
+					data-imageset="kleinklima">
+			</div>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc3_condition"
+					data-imageset="kleinklima">
+			</div>
+		</div>
+ 		<div class="container top-space">
+			<div class="sheet darker">
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol" 
+							data-icon="oa-temp_temperature_min"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="YahooWetter"
+							data-get="fc3_low_c"
+							data-unit="%B0C%0A"></div>
+					</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-temp_temperature_max"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="YahooWetter"
+							data-get="fc3_high_c"
+							data-unit="%B0C%0A">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_rain_meter"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc3_chOfRainDay"
+							data-unit="%">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_sun"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc3_sun"
+							data-unit="%">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell icon"
+							data-type="label">UV
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc3_uv"
+							data-limits="[0,5,7,10,100]" 
+							data-colors='["#c0ffa0","#f8f040","#f87820","#d80020","#a80080"]'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>	
+	
+	
+			<li data-row="1" data-col="8" data-sizex="1" data-sizey="4">
+		<header>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc4_day_of_week">
+			</div>
+		</header>
+		<div class="container top-space">
+			<div	data-type="weather"
+					data-device="YahooWetter" 
+					data-get="fc4_condition"
+					data-imageset="kleinklima">
+			</div>
+			<div	data-type="label"
+					data-device="YahooWetter"
+					data-get="fc4_condition"
+					data-imageset="kleinklima">
+			</div>
+		</div>
+ 		<div class="container top-space">
+			<div class="sheet darker">
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol" 
+							data-icon="oa-temp_temperature_min"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="YahooWetter"
+							data-get="fc4_low_c"
+							data-unit="%B0C%0A"></div>
+					</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-temp_temperature_max"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="YahooWetter"
+							data-get="fc4_high_c"
+							data-unit="%B0C%0A">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_rain_meter"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc4_chOfRainDay"
+							data-unit="%">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell"
+							data-type="symbol"
+							data-icon="oa-weather_sun"
+							data-off-color="gray">
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc4_sun"
+							data-unit="%">
+					</div>
+				</div>
+				<div class="row">
+					<div	class="cell icon"
+							data-type="label">UV
+					</div>
+					<div	class="cell bigger"
+							data-type="label"
+							data-device="AgroWeather"
+							data-get="fc4_uv"
+							data-limits="[0,5,7,10,100]" 
+							data-colors='["#c0ffa0","#f8f040","#f87820","#d80020","#a80080"]'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+        
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

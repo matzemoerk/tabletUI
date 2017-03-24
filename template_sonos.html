@@ -1,0 +1,89 @@
+<div class="top-space">
+	
+	<div data-type="image"
+			data-device="Device"
+			data-get="currentAlbumArtURL"
+			data-width="250px"
+			data-height="250px"
+			class="nocache">
+		</div>
+	
+	<div class=" top-space">
+		<div data-type="classchanger" data-device="Device" data-get="currentNormalAudio" data-get-on="1" data-get-off="0" data-off-class="hide">
+			<div data-type="label" data-device="Device" data-get="currentTitle" class="bold truncate" style="height: 21px;"></div>
+			<div data-type="joinedlabel" data-device="Device" data-mask="[$1][ ~ $2]" data-get='["currentArtist","currentAlbum"]' class="truncate" style="height: 21px;"></div>
+		</div>
+		<div data-type="classchanger" data-device="Device" data-get="currentStreamAudio" data-get-on="1" data-get-off="0" data-off-class="hide">
+			<div data-type="label" data-device="Device" data-get="currentSenderInfo" class="bold truncate" style="height: 21px;"></div>
+			<div data-type="joinedlabel" data-device="Device" data-mask="[$1][: $2]" data-get='["currentSender","currentSenderCurrent"]' class="truncate" style="height: 21px;"></div>
+		</div>
+	</div>
+	
+	<div class="top-space">
+				
+		<div data-type="classchanger" data-device="Device" data-get="currentNormalAudio" data-get-on="1" data-get-off="0" data-off-class="hide" class="inline top-space">
+			
+			
+			<div data-type="push" data-device="Device"
+				data-icon="fa-step-backward" data-background-icon="-"
+				data-off-color="#fff" data-on-color="#aa6900"
+				data-set-on="Previous" class="inline">
+			</div>
+			
+			
+		</div>
+			
+		<div data-type="switch"
+			data-device="Device"
+			data-get="transportState"
+			data-states='["PLAYING","PAUSED_PLAYBACK","STOPPED"]'
+			data-set-states='["Pause","Play","Play"]'
+			data-background-icon="fa-circle-thin"
+			data-background-colors='["white","white","white"]'
+			data-colors='["white","white","white"]'
+			data-icons='["fa-pause","fa-play","fa-play"]'
+			class="inline small">
+		</div>
+		
+		<div data-type="classchanger" data-device="Device" data-get="currentNormalAudio" data-get-on="1" data-get-off="0" data-off-class="hide" class="inline">
+			
+			
+			<div data-type="push" data-device="Device"
+				data-icon="fa-step-forward" data-background-icon="-"
+				data-off-color="#fff" data-on-color="#aa6900"
+				data-set-on="Next" class="inline">
+			</div>
+			
+		</div>
+		
+		</div>	
+	</div>
+	
+
+	
+	<div data-type="spinner"
+		data-device="Device"
+		data-get="Volume"
+		data-set="Volume"
+		data-max="50"
+		data-step="1"
+		data-width="250"
+		data-icon-left="fa-volume-down tall"
+		data-icon-right="fa-volume-up tall"
+		data-gradient-color='["blue","red"]'
+		class="tap value positiononly top-space-2x small centered">
+	</div>
+	
+	<div class="middle top-space-2x">Favoriten: </div>
+						<div data-type="select" 
+							data-device="Device" 
+							data-list="FavouritesList" 
+							data-alias="FavouritesListAlias" 
+							data-delimiter="|"
+							data-quote="/"
+							data-get="currentFavouriteName"
+							data-set="StartFavourite"
+							class="inline w3x"
+							onchange="$('.dialog-close').trigger('click');"></div>
+					</div>
+</div>
