@@ -16,6 +16,45 @@
     <script src="js/fhem-tablet-ui.js" defer></script>
     
     <title>FHEM-Tablet-UI</title>
+    
+    <!-- Anfang Styles und Javascript für die Scrolltexte in der Sonosplayer-Ansicht -->
+<style>
+.flowanimation {
+	position: relative;
+	white-space: nowrap;
+	display: inline-block;
+	animation: floatText 8s infinite alternate ease-in-out;
+}
+
+@keyframes floatText {
+	from {
+		left: 0px;
+	}
+	
+	to {
+		left: calc(355px - 100%);
+	}
+}
+
+.mycenteredtext {
+	position: relative;
+	white-space: nowrap;
+	display: inline-block;
+	left: calc(355px / 2 - 50%);
+}
+</style>
+
+<script type="text/javascript">
+	function checkFlowAnimation(elemName) {
+		if ($(elemName).innerWidth() >= 355) {
+			$(elemName).addClass('flowanimation');
+		} else {
+			$(elemName).addClass('mycenteredtext');
+		}
+	}
+</script>
+<!-- Ende Styles und Javascript für die Scrolltexte in der Sonosplayer-Ansicht -->
+    
 </head>
 
 <body>
@@ -37,7 +76,7 @@
                     <div data-type="pagebutton" data-url="#page_main.html" data-load="#main" data-active-pattern=".*#page_main.html" data-icon="fa-home" class="default top-space"></div>
                     <div data-type="pagebutton" data-url="#page_wecker.html" data-load="#wecker"  data-active-pattern=".*#page_wecker.html" data-icon="fa-bell" class="top-space"></div>
                     <div data-type="pagebutton" data-url="#page_sonos.html" data-load="#sonos"  data-active-pattern=".*#page_sonos.html" data-icon="fa-music" class="prefetch top-space"></div>
-                    <div data-type="pagebutton" data-url="#page_wetter.html" data-load="#wetter"  data-active-pattern=".*#page_wetter.html" data-icon="fa-cloud" class="top-space"></div>
+                    <div data-type="pagebutton" data-url="#page_wetter.html" data-load="#wetter"  data-active-pattern=".*#page_wetter.html"  data-icon="fa-cloud" class="prefetch top-space"></div>
                     <div data-type="pagebutton" data-url="#page_fritzbox.html" data-load="#fritzbox"  data-active-pattern=".*#page_fritzbox.html" data-icon="fa-phone" class="top-space"></div>
                     <div data-type="pagebutton" data-url="#page_system.html" data-load="#system" data-active-pattern=".*#page_system.html" data-icon="fa-gears" class="top-space"></div>
                     

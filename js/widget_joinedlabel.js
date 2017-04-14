@@ -22,6 +22,7 @@ var Modul_joinedlabel = function () {
 
         elem.initData('glue', ' ');
         elem.initData('mask', '');
+        elem.initData('onupdate', '');
         console.log('init_attr end');
     }
 
@@ -78,6 +79,8 @@ var Modul_joinedlabel = function () {
             elem.html(html);
 
             me.update_colorize(html, elem);
+            eval(elem.data('onupdate'));
+
         });
     }
 
